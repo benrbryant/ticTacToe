@@ -1,6 +1,9 @@
 .board {
     padding: 3em 0 0 0;
     text-align: center;
+    box-shadow: 2px 2px 10px black;
+    margin: 3em 10em;
+    height: 425px;
 }
 .top, .center, .bottom {
     float: left;
@@ -26,4 +29,9 @@
 }
 .row > div:hover {
    background-color: lightgray; 
+}
+
+h1 {
+    text-decoration: underline;
+    font-family: cursive;
 }

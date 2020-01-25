@@ -1,0 +1,29 @@
+.board {
+    padding: 3em 0 0 0;
+    text-align: center;
+}
+.top, .center, .bottom {
+    float: left;
+    height: 100px;
+    width: 100px;
+}
+.row {
+    margin: 0 auto;
+    width: 302px;
+    clear: both;
+}
+.top {
+    border-bottom: 1px solid black;
+}
+.bottom {
+    border-top: 1px solid black;
+}
+.left {
+    border-right: 1px solid black;
+}
+.right {
+    border-left: 1px solid black;
+}
+.row > div:hover {
+   background-color: lightgray; 
+}

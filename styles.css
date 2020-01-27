@@ -1,11 +1,11 @@
 .board {
-    padding: 3em 0 0 0;
+    padding: 3rem 0 0 0;
+    margin-top: 1rem;
     text-align: center;
     box-shadow: 2px 2px 10px black;
-    margin: 3em 10em;
     height: 425px;
 }
-.top, .center, .bottom {
+.row > div {
     float: left;
     height: 100px;
     width: 100px;

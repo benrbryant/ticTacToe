@@ -1,5 +1,12 @@
-let cell = document.querySelector('.row > div');
+let turn = document.querySelectorAll('.row > div');
+turn = document.getElementsByClassName('.row > div');
+turn.addEventListener('click', makePlay, false);
 
-cell.addEventListener('click', event => {
-  cell.innerHTML = `Click count: ${event.detail}`;
-});
+  
+function makePlay(){
+    turn.textContent = 'X';
+    };
+console.log(turn);
+  
+
+ 

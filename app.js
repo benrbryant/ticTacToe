@@ -1,12 +1,15 @@
-let turn = document.querySelectorAll('.row > div');
-turn = document.getElementsByClassName('.row > div');
-turn.addEventListener('click', makePlay, false);
+// Selects all squares from document
+let cells = document.querySelectorAll('.row>div');
 
+cells.forEach(function(cells) {
+    addEventListener('click', makePlay);
+});
+
+function makePlay(e) {
+   e.target.textContent = 'X';
+};
   
-function makePlay(){
-    turn.textContent = 'X';
-    };
-console.log(turn);
+console.log(cells); 
   
 
  

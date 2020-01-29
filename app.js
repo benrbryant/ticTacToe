@@ -1,57 +1,6 @@
 // Selects all squares from document
 let cells = document.querySelectorAll('.row>div');
 
-// Declare Win-Check Arrays
-let topH = [];
-let centerH = [];
-let bottomH = [];
-let leftV = [];
-let rightV = [];
-let diagRight = [];
-let diagLeft = []; 
-let result = [];
-
-result = [topH, centerH, bottomH, leftV, rightV, diagRight, diagLeft];
-
-// Functions to check game result
-function storeResulttopH(e) {
-    result[0].push(e.target.textContent);
-};
-function storeResultcenterH(e) {
-    result[1].push(e.target.textContent);
-};
-function storeResultbottomH(e) {
-    result[2].push(e.target.textContent);
-};
-function storeResultleftV(e) {
-    result[3].push(e.target.textContent);
-};
-function storeResultrightV(e) {
-    result[4].push(e.target.textContent);
-};
-function storeResultdiagRight(e) {
-    result[5].push(e.target.textContent);
-};
-function storeResultdiagLeft(e) {
-    result[6].push(e.target.textContent);
-};
-
-// Selects all top squares
-let topCells = document.querySelectorAll('.top');
-// Selects all center squares
-let centCells = document.querySelectorAll('.center');
-// Selects all bottom squares
-let bottomCells = document.querySelectorAll('.bottom');
-// Selects all left squares
-let leftCells = document.querySelectorAll('.left');
-// Selects all right squares
-let rightCells = document.querySelectorAll('.right');
-// // Selects squares in a diagonal from top left to bottom right
-// let diagonalRight = document.querySelector('.top .left, .center .middle, .bottom .right');
-// // Selects squares in a diagonal from top left to bottom right
-// let diagonalLeft = document.querySelector('.bottom .left, .center .middle, .top .right');
-
-
 // Variable for amount of clicks, odd are 'X', even are 'O'
 let count=0;
 
@@ -60,28 +9,6 @@ cells.forEach(function(div) {
     div.addEventListener('click', makePlay);    
     
 });
-// Sets click listener for each section of cells for storing mark
-topCells.forEach(function(div){
-    div.addEventListener('click', storeResulttopH);
-});
-centCells.forEach(function(div){
-    div.addEventListener('click', storeResultcenterH);
-});
-bottomCells.forEach(function(div){
-    div.addEventListener('click', storeResultbottomH);
-});
-leftCells.forEach(function(div){
-    div.addEventListener('click', storeResultleftV);
-});
-rightCells.forEach(function(div){
-    div.addEventListener('click', storeResultrightV);
-});
-// diagonalRight.forEach(function(div){
-//     div.addEventListener('click', storeResultdiagRight);
-// });
-// diagonalLeft.forEach(function(div){
-//     div.addEventListener('click', storeResultdiagLeft);
-// });
 
 // function for each play
 function makePlay(e) {
@@ -89,16 +16,76 @@ function makePlay(e) {
         e.target.textContent = 'X';
         count++;
         console.log(count);
+        console.log(e.target);
     }
     else if(e.target.textContent=='' && count % 2) {
         e.target.textContent = 'O';
         count++;
         console.log(count); 
+        console.log(e.target);
     } 
+    if(count>=5){
+        // Conditions to check game result
+        let test = Array.from(cells);
+        
+        // Horizontal Wins for X
+        if(test[0].textContent == "X" && test[1].textContent == "X" && test[2].textContent == "X") {
+            alert('X Wins!');
+        } 
+        else if(test[3].textContent == "X" && test[4].textContent == "X" && test[5].textContent == "X") {
+            alert('X Wins!');
+        } 
+        else if(test[6].textContent == "X" && test[7].textContent == "X" && test[8].textContent == "X") {
+            alert('X Wins!');
+        } 
+
+        // Horizontal Wins for O
+        if(test[0].textContent == "O" && test[1].textContent == "O" && test[2].textContent == "O") {
+            alert('O Wins!');
+        } 
+        else if(test[3].textContent == "O" && test[4].textContent == "O" && test[5].textContent == "O") {
+            alert('O Wins!');
+        } 
+        else if(test[6].textContent == "O" && test[7].textContent == "O" && test[8].textContent == "O") {
+            alert('O Wins!');
+        }
+
+        // Vertical Wins for X
+        if(test[0].textContent == "X" && test[3].textContent == "X" && test[6].textContent == "X") {
+            alert('X Wins!');
+        } 
+        else if(test[1].textContent == "X" && test[4].textContent == "X" && test[7].textContent == "X") {
+            alert('X Wins!');
+        } 
+        else if(test[2].textContent == "X" && test[5].textContent == "X" && test[8].textContent == "X") {
+            alert('X Wins!');
+        }
+
+        // Vertical Wins for O
+        if(test[0].textContent == "O" && test[3].textContent == "O" && test[6].textContent == "O") {
+            alert('O Wins!');
+        } 
+        else if(test[1].textContent == "O" && test[4].textContent == "O" && test[7].textContent == "O") {
+            alert('O Wins!');
+        } 
+        else if(test[2].textContent == "O" && test[5].textContent == "O" && test[8].textContent == "O") {
+            alert('O Wins!');
+        }
+
+        // Diagonal Wins for X
+        if(test[0].textContent == "X" && test[4].textContent == "X" && test[8].textContent == "X") {
+            alert('X Wins!');
+        } 
+        else if(test[6].textContent == "X" && test[4].textContent == "X" && test[2].textContent == "X") {
+            alert('X Wins!');
+        } 
+        
+        // Diagonal Wins for O
+        if(test[0].textContent == "O" && test[4].textContent == "O" && test[8].textContent == "O") {
+            alert('O Wins!');
+        } 
+        else if(test[6].textContent == "O" && test[4].textContent == "O" && test[2].textContent == "O") {
+            alert('O Wins!');
+        }
+    }
 };
-
-
-
-
-
-console.log(result);

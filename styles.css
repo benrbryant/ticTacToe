@@ -3,8 +3,22 @@
     margin-top: 1rem;
     text-align: center;
     box-shadow: 2px 2px 10px black;
-    height: 425px;
+    height: 475px;
 }
+.panel{
+    margin: 5px auto;
+    width: 302px;
+    clear: both;
+    background-color: blue;
+}
+.panel>div{
+    float: left;
+    border: 1px solid green;
+    height: 25px;
+    width: 50px;
+    margin: 1rem 1rem;
+}
+
 .row > div {
     float: left;
     height: 100px;

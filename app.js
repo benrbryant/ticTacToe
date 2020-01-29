@@ -1,8 +1,14 @@
 // Selects all squares from document
 let cells = document.querySelectorAll('.row>div');
 
+// Selects h3.result
+let result = document.getElementsByClassName('.result');
+
 // Variable for amount of clicks, odd are 'X', even are 'O'
 let count=0;
+
+// Object for Win condition
+let win = {outcome: false, winner: ''};
 
 // Adds event listener to each square
 cells.forEach(function(div) {
@@ -12,6 +18,8 @@ cells.forEach(function(div) {
 
 // function for each play
 function makePlay(e) {
+    console.log(win.winner);
+    if(win.outcome==false){
     if(e.target.textContent=='' && !(count % 2)){
         e.target.textContent = 'X';
         count++;
@@ -30,62 +38,68 @@ function makePlay(e) {
         
         // Horizontal Wins for X
         if(test[0].textContent == "X" && test[1].textContent == "X" && test[2].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         else if(test[3].textContent == "X" && test[4].textContent == "X" && test[5].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         else if(test[6].textContent == "X" && test[7].textContent == "X" && test[8].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
 
         // Horizontal Wins for O
         if(test[0].textContent == "O" && test[1].textContent == "O" && test[2].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         } 
         else if(test[3].textContent == "O" && test[4].textContent == "O" && test[5].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         } 
         else if(test[6].textContent == "O" && test[7].textContent == "O" && test[8].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         }
 
         // Vertical Wins for X
         if(test[0].textContent == "X" && test[3].textContent == "X" && test[6].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         else if(test[1].textContent == "X" && test[4].textContent == "X" && test[7].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         else if(test[2].textContent == "X" && test[5].textContent == "X" && test[8].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         }
 
         // Vertical Wins for O
         if(test[0].textContent == "O" && test[3].textContent == "O" && test[6].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         } 
         else if(test[1].textContent == "O" && test[4].textContent == "O" && test[7].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         } 
         else if(test[2].textContent == "O" && test[5].textContent == "O" && test[8].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         }
 
         // Diagonal Wins for X
         if(test[0].textContent == "X" && test[4].textContent == "X" && test[8].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         else if(test[6].textContent == "X" && test[4].textContent == "X" && test[2].textContent == "X") {
-            alert('X Wins!');
+            win = {outcome: true, winner: 'X Wins!'};
         } 
         
         // Diagonal Wins for O
         if(test[0].textContent == "O" && test[4].textContent == "O" && test[8].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
         } 
         else if(test[6].textContent == "O" && test[4].textContent == "O" && test[2].textContent == "O") {
-            alert('O Wins!');
+            win = {outcome: true, winner: 'O Wins!'};
+        } else {
+        // Display winner
+        result = win.winner; 
+    
+    // console.log(result);
         }
     }
-};
+}
+}

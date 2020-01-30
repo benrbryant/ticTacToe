@@ -32,15 +32,7 @@ restart.addEventListener('click', resetGame);
 
 // function for each play
 function makePlay(e) {
-    // Displays player turn
-     if(!(count % 2)){
-        OturnBlob.style.opacity = '1';
-        XturnBlob.style.opacity = '0';
-    } else if(count % 2){
-        XturnBlob.style.opacity = '1';
-        OturnBlob.style.opacity = '0';
-    }
-
+    
     if(win.outcome==false){
         if(e.target.textContent=='' && !(count % 2)){
             e.target.textContent = 'X';
@@ -60,7 +52,16 @@ function makePlay(e) {
             console.log(count); 
             console.log(e.target);
         } 
-    
+
+        // Displays player turn
+        if(!(count % 2)){
+            OturnBlob.style.opacity = '1';
+            XturnBlob.style.opacity = '0';
+        } else if(count % 2){
+            XturnBlob.style.opacity = '1';
+            OturnBlob.style.opacity = '0';
+        }
+
         if(count>=5){
             // Conditions to check game result
             let test = Array.from(cells);

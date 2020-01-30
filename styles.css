@@ -99,6 +99,7 @@ button {
 }
 .row > div:hover {
    background-color: lightgray; 
+   cursor: pointer;
 }
 
 h1 {

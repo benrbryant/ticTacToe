@@ -1,28 +1,84 @@
+/* .panel > p > span {
+    height: 23px;
+    width: 158px;
+    float: left;  
+    position: relative;
+    
+} */
+button {
+    display: block;
+    margin: 2em auto;
+    height: 40px;
+    width: 80px;
+    font-family: cursive;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+.prompts {
+    padding: 5px 0;
+}
+.turns, .prompts {
+    margin: 0em;
+
+}
+.Xturn {
+    margin: 5px 0;
+    text-align: center;
+    background-color: cornflowerblue;
+    border: 1px solid black;
+    border-bottom: 1px outset white;
+    border-radius: 15px;
+    font-weight: bold;
+    opacity: 1;
+    height: 23px;
+    width: 155px;
+    display: inline-block;
+    position: relative;
+}
+.Oturn {
+    margin: 5px 0;
+    text-align: center;
+    background-color: red;
+    border: 1px solid black;
+    border-radius: 15px;
+    border-bottom: 1px outset white;
+    font-weight: bold;
+    opacity: 0;
+    height: 23px;
+    width: 155px;
+    display: inline-block;
+    position: relative;
+}
+
 .board {
     padding: 3rem 0 0 0;
     margin-top: 1rem;
     text-align: center;
+    border-radius: 5px;
     box-shadow: 2px 2px 10px black;
     height: 475px;
+    font-family: cursive;
+    background-color: white;
+    
 }
 .panel{
     margin: 5px auto;
-    width: 302px;
+    padding: 10px 0;
+    border-radius: 5px;
+    height: 55px;
+    width: 320px;
     clear: both;
-    background-color: blue;
-}
-.panel>div{
-    float: left;
-    border: 1px solid green;
-    height: 25px;
-    width: 50px;
-    margin: 1rem 1rem;
+    background-color: white;
+    /* font-size: 25px; */
 }
 
 .row > div {
     float: left;
     height: 100px;
     width: 100px;
+    font-size: 50px;
+    text-align: center;
 }
 .row {
     margin: 0 auto;
@@ -46,6 +102,11 @@
 }
 
 h1 {
-    text-decoration: underline;
-    font-family: cursive;
+    text-decoration: underline; 
+    margin: .5rem 0;
+}
+body {
+    /* background-color: rgb(100, 230, 50); */
+    background-image: url(https://images.pexels.com/photos/251287/pexels-photo-251287.png?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+    background-size: contain;
 }
